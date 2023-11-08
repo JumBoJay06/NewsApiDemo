@@ -1,2 +1,2 @@
 # NewsApiDemo
-![Screen_Recording_NewsApiDemo.gif](/pic/Screen_Recording_NewsApiDemo.gif)
+<img width="300" height="480" src="/pic/Screen_Recording_NewsApiDemo.gif"/>
