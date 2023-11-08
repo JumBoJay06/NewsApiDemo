@@ -5,9 +5,13 @@ import com.google.gson.annotations.Expose
 import io.realm.kotlin.types.EmbeddedRealmObject
 
 @Keep
-class Source(
+data class NewsSource(
     @Expose
-    val id: String = "",
+    var id: String = "",
     @Expose
-    val name: String = ""
-) : EmbeddedRealmObject
+    var name: String = ""
+) {
+    override fun toString(): String {
+        return "Source(id='$id', name='$name')"
+    }
+}

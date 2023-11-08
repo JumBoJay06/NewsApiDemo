@@ -2,8 +2,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.ksp)
     alias(libs.plugins.realm)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -12,6 +12,7 @@ android {
 
     buildFeatures {
         buildConfig = true
+        dataBinding = true
     }
 
     defaultConfig {
@@ -23,8 +24,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "NEWS_API_KEY", "6c65906181e544738bb4f8eb223419cf")
-        buildConfigField("String", "API_URL", "\"https://newsapi.org/v2\"")
+        buildConfigField("String", "NEWS_API_KEY", "\"6c65906181e544738bb4f8eb223419cf\"")
+        buildConfigField("String", "API_URL", "\"https://newsapi.org/v2/\"")
     }
 
     buildTypes {
@@ -36,6 +37,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -64,6 +66,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.logging.interceptor)
+    implementation(libs.swiperefreshlayout)
     ksp(libs.glide.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
